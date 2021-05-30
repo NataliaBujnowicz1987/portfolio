@@ -1,0 +1,731 @@
+$font: 'Rosarivo',
+serif;
+$desktop: 700px;
+$green-color: #757e61;
+$orange-color: #e4c396;
+$brown-color: #b46f36;
+$dark-color: #3d3f3e;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font-family: $font;
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+// background img
+#portfolio:before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    // Designed by Freepik
+    background: url("../assets/mobile.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    @media (min-width: $desktop) {
+        // Designed by Freepik
+        background-image: url("../assets/desktop.jpg");
+    }
+}
+
+// cursor animation
+.cursor {
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid $dark-color;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transition-property: background, transform;
+    transform-origin: 100% 100%;
+    z-index: -1;
+    backdrop-filter: invert(.9);
+}
+
+.link-grow {
+    transform: scale(1.5);
+    background: rgba(105, 113, 87, 0.7);
+}
+
+nav {
+    font-size: 1.1em;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 44;
+    background: rgba(105, 113, 87, 0.9);
+    @media (min-width: $desktop) {
+        padding: 0.3em 1em;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5em 1em;
+        list-style: none;
+        @media (min-width: $desktop) {
+            padding: 0.4em 2em;
+        }
+        li {
+            color: $orange-color;
+            font-size: 0.8em;
+            @media (min-width: $desktop) {
+                font-size: 1em;
+            }
+        }
+        a {
+            text-decoration: none;
+            color: $orange-color;
+            text-shadow: 0 0 2px $dark-color;
+            &:hover {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    // svg girl
+    .bzinka {
+        display: inline-block;
+        position: absolute;
+        top: 40%;
+        right: 0%;
+        @media (orientation: portrait) {
+            top: 30%;
+            right: 0%;
+        }
+        svg {
+            width: 30%;
+            height: auto;
+            @media (orientation: portrait) {
+                width: 45%;
+            }
+        }
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: $dark-color;
+        text-shadow: 2px 2px 1px #fff;
+        cursor: pointer;
+        @media (min-width: $desktop) {
+            font-size: 3rem;
+        }
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        text-shadow: 1px 1px 2px $dark-color;
+        cursor: pointer;
+        @media (min-width: $desktop) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+// about section
+.about {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0 2em;
+    // color: #fff;
+    width: 100%;
+    // color: $dark-color;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (orientation: portrait) {
+        background: rgb(0, 0, 0);
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.42619054457720584) 67%, rgba(0, 0, 0, 0.100) 100%);
+        // color: #fff;
+    }
+    &-header {
+        height: 90vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        @media (min-width: $desktop) {
+            height: 65vh;
+        }
+        span a {
+            color: $brown-color;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            
+            &:hover {
+                text-decoration: underline overline;
+            }
+            @media (orientation: portrait) {
+                color: $orange-color;
+                min-height: 100vh;
+                text-shadow: 1px 1px 2px #000;
+            }
+        }
+    }
+
+    h2 {
+        font-size: 2rem;
+        text-align: center;
+        letter-spacing: 0.2em;
+        color: #fff;
+        text-shadow: 1px 1px 2px #000;
+        @media (min-width: $desktop) {
+            font-size: 3rem;
+            text-shadow: 1px 1px 2px #fff;
+            color: $dark-color;
+        }
+        @media (min-width: 600px) and (max-width: 1100px) and (orientation: landscape) {
+            margin-bottom: 1.2rem;
+            font-size: 2rem;
+            color: $dark-color;
+            text-shadow: 1px 1px 2px #000;
+        }
+    }
+
+    p {
+        text-align: center;
+        line-height: 2em;
+        margin-bottom: 1em;
+        font-size: 0.9em;
+        color: #fff;
+        text-shadow: 1px 1px 2px #000;
+        @media (min-width: $desktop) {
+            font-size: 1em;
+            text-shadow: 1px 1px 2px #fff;
+            color: $dark-color;
+        }
+        @media (min-width: 600px) and (max-width: 1100px) and (orientation: landscape) {
+            line-height: 1.5em;
+            font-size: 0.9em;
+            color: $dark-color;
+            text-shadow: 1px 1px 2px #fff;
+          
+        }
+    }
+
+    .bubbly-button {
+        font-family: $font;
+        padding: 1em 4em;
+        margin-top: 0px;
+        margin-bottom: 30px;
+        -webkit-appearance: none;
+        appearance: none;
+        background: #E5E5E5;
+        border-radius: 10px;
+        border: 1px solid $green-color;
+        cursor: pointer;
+        position: relative;
+        transition: transform ease-in 0.1s;
+        @media (min-width: $desktop) {
+            margin-top: 15px;
+            margin-bottom: 60px;
+            font-size: 1em;
+        }
+        @media (min-width: 600px) and (max-width: 1100px) and (orientation: landscape) {
+            padding: 0.9em 1.5em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+          
+        }
+        &:focus {
+            outline: 0;
+        }
+          
+        &:before, &:after {
+            position: absolute;
+            content: '';
+            display: block;
+            width: 140%;
+            height: 100%;
+            left: -20%;
+            z-index: -1000;
+            transition: all ease-in-out 0.8s;
+            background-repeat: no-repeat;
+        }
+
+        a {
+            color: $dark-color;
+            text-decoration: none;
+        }
+
+        &:before{
+            display: none;
+            top: -75%;
+            background-image:  
+              radial-gradient(circle, $brown-color  20%, transparent 20%),
+              radial-gradient(circle,  transparent 20%, $green-color 20%, transparent 30%),
+              radial-gradient(circle, $dark-color 20%, transparent 20%), 
+              radial-gradient(circle, $green-color 20%, transparent 20%),
+              radial-gradient(circle,  transparent 10%, $green-color 15%, transparent 20%),
+              radial-gradient(circle, $green-color 20%, transparent 20%),
+              radial-gradient(circle,  $brown-color 20%, transparent 20%),
+              radial-gradient(circle, $green-color 20%, transparent 20%),
+              radial-gradient(circle,  $dark-color 20%, transparent 20%);
+            background-size: 20% 20%, 30% 30%, 25% 25%, 30% 30%, 28% 28%, 20% 20%, 25% 25%, 20% 20%, 28% 28%;
+            // background-position: 0% 80%, -5% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 85% 30%;
+          }
+          
+          &:after{
+            display: none;
+            bottom: -75%;
+            background-image:  
+            radial-gradient(circle,  $dark-color 20%, transparent 20%), 
+            radial-gradient(circle, $brown-color  20%, transparent 20%),
+            radial-gradient(circle,  transparent 10%, $green-color 15%, transparent 20%),
+            radial-gradient(circle,  $dark-color 20%, transparent 20%),
+            radial-gradient(circle, $green-color 20%, transparent 20%),
+            radial-gradient(circle,  $dark-color 20%, transparent 20%),
+            radial-gradient(circle, $brown-color  20%, transparent 20%);
+          background-size: 25% 25%, 30% 30%, 28% 28%, 30% 30%, 25% 25%, 20% 20%, 30% 30%;
+          //background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+          }
+         
+          &:active{
+            transform: scale(0.9);
+            background-color: darken($green-color , 5%);
+            color: #fff;
+          }
+          
+          &.animate{
+            &:before{
+              display: block;
+              animation: topBubbles ease-in-out 0.9s forwards;
+            }
+            &:after{
+              display: block;
+              animation: bottomBubbles ease-in-out 0.9s forwards;
+            }
+          }
+        }
+        
+        @keyframes topBubbles {
+          0%{
+            background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+          }
+            50% {
+              background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;}
+         100% {
+            background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+            background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+          }
+        }
+        
+        @keyframes bottomBubbles {
+          0%{
+            background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+          }
+          50% {
+            background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;}
+         100% {
+            background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+            background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+          }
+        }
+}
+
+// social media
+.contact {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1em;
+    align-items: center;
+    @media (min-width: $desktop) {
+        width: 60%;
+        font-size: 1.3em;
+        justify-content: space-evenly;
+     
+    }
+    @media (min-width: 600px) and (max-width: 1100px) and (orientation: landscape) {
+        padding: 1.5em 0 0 0;
+        justify-content: space-between;
+    }
+
+    i {
+        font-size: 1.3em;
+        color: #fff;
+        transition: all 0.4s linear;
+        color: $orange-color;
+        position: relative;
+        top: 0;
+        &:hover {
+            color: $brown-color;
+            top: -10px;
+        }
+    }
+
+    a:nth-child(1) i {
+        color: $dark-color;
+        &:hover {
+            color: $green-color;
+        }
+    }
+
+    a:nth-child(3) i {
+        color: $green-color;
+        &:hover {
+            color: $orange-color;
+        }
+    }
+
+    a:nth-child(4) i {
+        color: $brown-color;
+        &:hover {
+            color: $green-color;
+        }
+    }
+}
+
+// portfolio page
+.portfolio {
+    background-color: rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    @media (orientation: portrait) {
+        padding: 3em 0;
+    }
+    @media (min-width: 600px) and (max-width: 1100px) and (orientation: landscape) {
+        padding: 3em 0;
+    }
+    &-box {
+        max-width: 1300px;
+        border: 1px solid #000;
+        box-shadow: 0px 0px 10px  #000;
+        @media (orientation: portrait) {
+            width: 85%;
+            height: 90vh;
+    
+        }
+        @media (min-width: $desktop) {
+            width: 60%;
+            height: 70vh;
+        }
+        @media (min-width: 600px) and (max-width: 1100px) and (orientation: landscape) {
+            width: 80%;
+            height: 85vh;
+        }
+        background-color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 50px;
+        &-content {
+            overflow: hidden;
+            border-radius: 20px 20px 0 0;
+            background-color: #000;
+            color: $orange-color;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            @media (min-width: $desktop) {
+                width: 90%;
+                height: 80%;
+                justify-content: center;
+            }
+            @media (orientation: portrait) {
+         
+                margin-top: 1em;
+                width: 85%;
+                height: 70vh;
+                justify-content: center;
+            }
+            @media (min-width: 600px) and (max-width: 1000px) and (orientation: landscape) {
+                width: 85%;
+                height: 70vh;
+            }
+            .video-mobile {
+                @media (min-width: $desktop) {
+                    display: none;
+                }
+                @media (orientation: portrait) {
+                    display: block;
+                }
+                @media (min-width: 600px) and (max-width: 1100px) and (orientation: landscape) {
+                    display: none;
+                }
+            }
+
+            .video-desktop {
+                @media (orientation: portrait) {
+                    display: none;
+                }
+            }
+            video {
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+            }
+            .img-mobile {
+                @media (min-width: $desktop) {
+                    display: none;
+                }
+                @media (orientation: portrait) {
+                    display: block;
+                }
+                @media (min-width: 600px) and (max-width: 1100px) and (orientation: landscape) {
+                    display: none;
+                }
+            }
+            .img-desktop {
+                @media (orientation: portrait) {
+                    display: none;
+                }
+            }
+            @keyframes imgScale {
+                0% {
+                    transform: scale(1.5);
+                    opacity: 0;
+                }
+                100% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                animation: imgScale 3s linear;
+                @media (min-width: $desktop) {
+                    object-fit: cover;
+                }
+                transition: transform 3s cubic-bezier(.5, 0, .5, 1);
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+
+            h2 {
+                text-align: center;
+                font-size: 2em;
+                padding-bottom: 1em;
+                @media (min-width: $desktop) {
+                    font-size: 2.5em;
+                }
+                @media (min-width: 600px) and (max-width: 1100px) and (orientation: landscape) {
+                    font-size: 1.5em;
+                }
+                @media (min-width: 600px) and (max-width: 800px) and (orientation: portrait) {
+                    font-size: 3vh;
+                }
+            }
+            &--txt {
+                overflow: auto;
+                padding: 1.5em;
+                text-align: center;
+                width: 100%;
+                margin: 0 auto;
+                @media (min-width: $desktop) {
+                    width: 90%;
+                }
+            }
+            p {
+                font-size: 0.9em;
+                padding-bottom: 1em;
+                line-height: 1.8em;
+                @media (min-width: $desktop) {
+                    font-size: 1.2em;
+                }
+                @media (min-width: 600px) and (max-width: 1100px) and (orientation: landscape) {
+                    font-size: 1em;
+                    padding-bottom: 1.2em;
+                }
+            }
+
+            svg {
+                width: 10%;
+                position: absolute;
+                z-index: 1;
+                left: 20px;
+                top: 10%;
+            }
+        }
+    // scroll bar 
+        ::-webkit-scrollbar {
+            height: 10px;
+            width: 10px;
+            background: #000;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgb(19, 17, 17);
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-corner {
+            background: #000;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            @media (min-width: $desktop) {
+                flex-direction: row;
+                width: 90%;
+            }
+            @media (min-width: 600px) and (max-width: 1100px) and (orientation: landscape) {
+                width: 80%;
+            }
+            .buttons {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                width: 80%;
+                @media (orientation: portrait) {
+                    flex-direction: column;
+                    width: auto;
+                    justify-content: space-between;
+                }
+            }
+
+            button {
+                padding: 0.5em 2.5em;
+                margin: 0.5em;
+                @media (orientation: portrait) {
+                    padding: 0.3em 1em;
+                }
+                @media (min-width: 600px) and (max-width: 1100px) and (orientation: landscape) {
+                    padding: 0.3em 1em;
+                    font-size: 0.7em;
+                }
+                border-radius: 40px;
+                border: none;
+                background-color: $dark-color;
+                box-shadow: 1px 1px 2px $green-color;
+                transition: all 2s linear;
+                &:nth-child(3) {
+                    background-color: $green-color;
+                    color: #fff;
+                }
+                a {
+                    text-decoration: none;
+                    &:last-child {
+                        color: #fff;
+                    }
+                }
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+
+            i {
+                font-size: 2em;
+                @media (min-width: 600px) and (max-width: 1100px) and (orientation: landscape) {
+                    font-size: 1.5em;
+                }
+                cursor: pointer;
+                color: $dark-color;
+                transition: all 1s linear;
+                position: relative;
+                // hover animation
+                &:first-child {
+                    &:hover {
+                        animation: arrowLeftMove 1.5s linear infinite alternate;
+                    }
+                }
+                &:last-child {
+                    &:hover {
+                        animation: arrowRightMove 1.5s linear infinite alternate;
+                    }
+                }
+                @keyframes arrowLeftMove {
+                    from {
+                        left: 0;
+                    }
+                    to {
+                        left: -15px
+                    }
+                }
+                @keyframes arrowRightMove {
+                    from {
+                        left: 0;
+                    }
+                    to {
+                        left: 15px
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 1em 0em;
+    align-items: center;
+    @media (min-width: $desktop) {
+        padding: 2em 1.2em;
+    }
+    div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+        @media (min-width: $desktop) {
+            width: 75%;
+        }
+        @media (min-width: 600px) and (max-width: 1100px) and (orientation: landscape) {
+            width: 90%;
+        }
+    }
+
+    i {
+        font-size: 1.2em;
+        text-shadow: 1px 1px 2px $brown-color;
+        position: relative;
+        top: 0;
+        @media (min-width: $desktop) {
+            font-size: 2em;
+        }
+        @media (min-width: 600px) and (max-width: 1100px) and (orientation: landscape) {
+            font-size: 1.3em;
+        }
+        transition: all 0.4s linear;
+        color: $orange-color;
+
+        &:hover {
+            color: $dark-color;
+            top: -10px;
+        }
+    }
+}
