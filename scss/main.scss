@@ -231,8 +231,17 @@ header {
             font-size: 0.9em;
             color: $dark-color;
             text-shadow: 1px 1px 2px #fff;
-          
         }
+       
+    }
+    .p{
+        position: relative;
+        span {
+            color: #6A7258;
+            font-weight: bold;
+        }
+      
+       
     }
 
     .bubbly-button {
@@ -574,6 +583,9 @@ header {
                 z-index: 1;
                 left: 20px;
                 top: 10%;
+            }
+            a {
+                color: $orange-color;
             }
         }
     // scroll bar 

@@ -303,6 +303,15 @@ header h2 {
   }
 }
 
+.about .p {
+  position: relative;
+}
+
+.about .p span {
+  color: #6A7258;
+  font-weight: bold;
+}
+
 .about .bubbly-button {
   font-family: "Rosarivo", serif;
   padding: 1em 4em;
@@ -799,6 +808,10 @@ header h2 {
   z-index: 1;
   left: 20px;
   top: 10%;
+}
+
+.portfolio-box-content a {
+  color: #e4c396;
 }
 
 .portfolio-box ::-webkit-scrollbar {

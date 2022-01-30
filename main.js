@@ -53,9 +53,9 @@ document.onreadystatechange = function () {
     gsap.registerPlugin(ScrollTrigger);
 
     // background animation
-    tl.from('#portfolio', { duration: 4, opacity: 0, ease: "slow(0.7, 0.7, false)" })
+    tl.from('#portfolio', { duration: 3, opacity: 0, ease: "slow(0.7, 0.7, false)" })
     // header animation
-    gsap.from('.header', { duration: 4, delay: 1, opacity: 0, y: "random(-400, 400)", ease: "back.out(1.7)", stagger: 1 })
+    gsap.from('.header', { duration: 3, delay: 1, opacity: 0, y: "random(-400, 400)", ease: "back.out(1.7)", stagger: 1 })
 
     // girl flower animatiomn
     const flower = document.getElementById('flower');
@@ -69,11 +69,21 @@ document.onreadystatechange = function () {
     gsap.from('.about-header', {
       scrollTrigger: {
         trigger: '.about-header',
+        start: 'top center',
+        toggleAction: 'start none restart none',
       },
       opacity: 0,
-      duration: 3,
+      duration: 2,
       scale: 0.3
     });
+    // paragraphs animation 
+    gsap.from('.p', {
+      scrollTrigger: {
+        trigger: '.about-header',
+      },
+      opacity: 0, top: 300, duration: 2, stagger: 0.5
+    })
+
 
     // scroll animation - desktop only
     const sections = document.querySelectorAll(".scrollSection");
@@ -106,5 +116,6 @@ document.onreadystatechange = function () {
     }
   }
 };
+
 
 
